@@ -52,12 +52,14 @@ public class ServiceImpl implements Service {
 	}
 
 	public String withdraw(int accNo, double amount) {
-		return 	bankRepository.findById(accNo).get().withdraw(amount);
-		
+		String bank=	bankRepository.findById(accNo).get().withdraw(amount);
+		bankRepository.save(bankRepository.findById(accNo).get());
+		return bank;
 	}
 
 	public void deposit(int accNo, double amount) {
 		bankRepository.findById(accNo).get().deposit(amount);
+		bankRepository.save(bankRepository.findById(accNo).get());
 		}
 
 	/*
