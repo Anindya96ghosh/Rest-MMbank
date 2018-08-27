@@ -13,7 +13,7 @@ public class MMCurrentAccount extends CurrentAccount {
 	}
 //	static CustomerRepository customerRepository;
 
-	public MMCurrentAccount(String accHolderName, double accountBalance, double odLimit) {
+	public MMCurrentAccount(String accHolderName, double accountBalance, int odLimit) {
 		super(accHolderName, accountBalance, odLimit);
 		
 	}

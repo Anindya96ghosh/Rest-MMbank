@@ -3,12 +3,12 @@ package com.rest.bank.pojo;
 
 public abstract class SavingsAccount extends BankAccount {
 	private boolean salary;
-	private double MINIMUM_BALANCE;
+	private double minBal;
 
 	public SavingsAccount(String accHolderName, double accountBalance, boolean salary) {
-		super(accHolderName, accountBalance);
+		super(accHolderName, accountBalance,salary);
 		this.salary = salary;
-		this.MINIMUM_BALANCE = 10000;
+		//this.MINIMUM_BALANCE = 10000;
 	}
 
 
@@ -18,22 +18,24 @@ public abstract class SavingsAccount extends BankAccount {
 	}
 
 
-	public boolean isSalaryValue() {
+	public boolean isSalary() {
 		return salary;
 	}
+
+
 	public void setSalary(boolean salary) {
 		this.salary = salary;
 		if(salary)
-			this.MINIMUM_BALANCE =0;
+			this.minBal =0;
 		else
-			this.MINIMUM_BALANCE = 10000;
+			this.minBal = 10000;
 	}
-	public double getMINIMUM_BALANCE() {
-		return MINIMUM_BALANCE;
-	}
-	public void setMINIMUM_BALANCE(double mINIMUM_BALANCE) {
-		MINIMUM_BALANCE = mINIMUM_BALANCE;
-	}
+//	public double getMinBal() {
+//		return minBal;
+//	}
+
+	
+	
 	public abstract String withdraw(double amount);
 	@Override
 	public String toString() {

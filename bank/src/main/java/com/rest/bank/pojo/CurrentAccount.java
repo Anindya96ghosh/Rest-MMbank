@@ -3,11 +3,11 @@ package com.rest.bank.pojo;
 
 
 public abstract class CurrentAccount extends BankAccount {
-	private double odLimit;
+	private int odLimit;
 
 
-	public CurrentAccount(String accHolderName, double accountBalance, double odLimit) {
-		super(accHolderName, accountBalance);
+	public CurrentAccount(String accHolderName, double accountBalance, int odLimit) {
+		super(accHolderName, accountBalance,odLimit);
 		this.odLimit = odLimit;
 	}
 
@@ -16,11 +16,11 @@ public abstract class CurrentAccount extends BankAccount {
 		// TODO Auto-generated constructor stub
 	}
 
-	public double getOdLimit() {
+	public int getOdLimit() {
 		return odLimit;
 	}
 
-	public void setOdLimit(double odLimit) {
+	public void setOdLimit(int odLimit) {
 		this.odLimit = odLimit;
 	}
 

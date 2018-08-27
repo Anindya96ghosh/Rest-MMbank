@@ -18,7 +18,7 @@ public class MMSavingsAccount extends SavingsAccount {
 	@Override
 	public String withdraw(double amount) {
 		String denominations;
-		if(amount <= (this.getAccountBalance() - super.getMINIMUM_BALANCE())) {
+		if(amount <= (this.getAccountBalance() )) {
 			this.setAccountBalance(this.getAccountBalance() - amount);
 				int thousand = (int)amount/1000;
 				amount = amount%1000;
